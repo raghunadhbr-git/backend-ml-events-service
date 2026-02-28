@@ -11,7 +11,7 @@ on:
 
   workflow_dispatch:
 
-  # Daily at 4:00 AM IST (22:30 UTC)
+  # Daily at 3:30 AM IST (22:00 UTC)
   schedule:
     - cron: "30 22 * * *"
 
