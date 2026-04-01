@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ML Event Tracking Service
 
 Tracks user interactions for ML pipelines.
@@ -13,3 +14,7 @@ Tracks user interactions for ML pipelines.
 
 ### Run
 python run.py
+=======
+# backend-ml-events-service
+backend-ml-events-service
+>>>>>>> f92012ee89291988cabccd6065e2f375d6325525
