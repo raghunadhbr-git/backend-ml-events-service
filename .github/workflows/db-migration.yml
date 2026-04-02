@@ -1,0 +1,47 @@
+name: 🚀 Manual Flask DB Migration (Supabase Hardcoded)
+
+on:
+  workflow_dispatch:   # 🔥 ONLY manual trigger
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==============================
+      # Step 1: Checkout Code
+      # ==============================
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+
+      # ==============================
+      # Step 2: Setup Python
+      # ==============================
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # ==============================
+      # Step 3: Install Dependencies
+      # ==============================
+      - name: 📦 Install Requirements
+        run: |
+          pip install -r requirements.txt
+
+      # ==============================
+      # Step 4: Run Migration (HARDCODED DB)
+      # ==============================
+      - name: 🧱 Run Flask DB Upgrade
+        env:
+          DATABASE_URL: postgresql://postgres.ctqflfmngwspubmqccdc:Raghunadh_1992@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres
+        run: |
+          flask db upgrade
+
+      # ==============================
+      # Step 5: Done
+      # ==============================
+      - name: ✅ Done
+        run: |
+          echo "Migration completed (or already up-to-date)"
